@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="./output.css" rel="stylesheet" />
+
+    <title>Tugas JavaScript</title>
+  </head>
+
+  <body class="bg-white text-black">
+    <!-- Header -->
+    <header class="border-b border-black">
+      <div class="mx-auto max-w-5xl px-6 py-5">
+        <h1 class="text-2xl font-bold">Tugas JavaScript</h1>
+        <p class="mt-1 text-sm">Kumpulan latihan dan tugas JavaScript.</p>
+
+        <a
+          href="./index.html"
+          class="mt-4 inline-block border border-black px-4 py-2 transition hover:bg-black hover:text-white"
+        >
+          ← Kembali ke Portfolio
+        </a>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-5xl px-6 py-10">
+      <!-- Daftar Tugas -->
+      <section class="mb-10">
+        <h2 class="text-xl font-bold">Daftar Tugas</h2>
+
+        <div class="mt-4 flex flex-wrap gap-2">
+          <a
+            href="#tugas-1"
+            class="border border-black bg-black px-4 py-2 text-white transition hover:bg-white hover:text-black"
+          >
+            Tugas 1
+          </a>
+
+          <a
+            href="#tugas-2"
+            class="border border-black px-4 py-2 transition hover:bg-black hover:text-white"
+          >
+            Tugas 2
+          </a>
+        </div>
+      </section>
+
+      <!-- TUGAS 1 -->
+      <section id="tugas-1" class="scroll-mt-6 border border-black">
+        <div class="border-b border-black bg-gray-100 px-5 py-4">
+          <p class="text-sm font-bold uppercase">Tugas 1</p>
+          <h2 class="mt-1 text-2xl font-bold">Program Penjualan Barang</h2>
+        </div>
+
+        <div class="p-5">
+          <p class="mb-6 max-w-2xl leading-7">
+            Masukkan nama barang, harga, dan jumlah barang. Program akan
+            menghitung total harga, diskon sebesar 10%, dan jumlah yang harus
+            dibayar.
+          </p>
+
+          <div class="max-w-xl">
+            <!-- Input -->
+            <div class="mb-4">
+              <label for="namaBarang" class="mb-1 block font-bold">
+                Nama Barang
+              </label>
+
+              <input
+                type="text"
+                id="namaBarang"
+                class="w-full border border-black px-3 py-2 outline-none focus:ring-2 focus:ring-black"
+                placeholder="Contoh: Keyboard"
+              />
+            </div>
+
+            <div class="mb-4">
+              <label for="harga" class="mb-1 block font-bold"> Harga </label>
+
+              <input
+                type="number"
+                id="harga"
+                min="0"
+                class="w-full border border-black px-3 py-2 outline-none focus:ring-2 focus:ring-black"
+                placeholder="Contoh: 100000"
+              />
+            </div>
+
+            <div class="mb-6">
+              <label for="jumlah" class="mb-1 block font-bold"> Jumlah </label>
+
+              <input
+                type="number"
+                id="jumlah"
+                min="1"
+                class="w-full border border-black px-3 py-2 outline-none focus:ring-2 focus:ring-black"
+                placeholder="Contoh: 2"
+              />
+            </div>
+
+            <!-- Output -->
+            <div class="border-t border-black pt-5">
+              <div class="mb-4">
+                <label for="total" class="mb-1 block font-bold"> Total </label>
+
+                <input
+                  type="text"
+                  id="total"
+                  class="w-full border border-black bg-gray-100 px-3 py-2"
+                  readonly
+                />
+              </div>
+
+              <div class="mb-4">
+                <label for="diskon" class="mb-1 block font-bold">
+                  Diskon 10%
+                </label>
+
+                <input
+                  type="text"
+                  id="diskon"
+                  class="w-full border border-black bg-gray-100 px-3 py-2"
+                  readonly
+                />
+              </div>
+
+              <div class="mb-6">
+                <label for="bayar" class="mb-1 block font-bold"> Bayar </label>
+
+                <input
+                  type="text"
+                  id="bayar"
+                  class="w-full border border-black bg-gray-100 px-3 py-2 font-bold"
+                  readonly
+                />
+              </div>
+            </div>
+
+            <p
+              id="pesan"
+              class="mb-4 hidden border border-black bg-gray-100 p-3"
+            ></p>
+
+            <!-- Tombol -->
+            <div class="flex gap-3">
+              <button
+                type="button"
+                onclick="prosesPenjualan()"
+                class="border-2 border-black bg-black px-5 py-2 font-bold text-white transition hover:-translate-y-1 hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_black] active:translate-x-1 active:translate-y-1 active:shadow-none"
+              >
+                Proses
+              </button>
+
+              <button
+                type="button"
+                onclick="resetPenjualan()"
+                class="border-2 border-black bg-white px-5 py-2 font-bold transition hover:-translate-y-1 hover:shadow-[4px_4px_0px_black] active:translate-x-1 active:translate-y-1 active:shadow-none"
+              >
+                Reset
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TUGAS 2 -->
+      <section id="tugas-2" class="mt-10 scroll-mt-6 border border-black">
+        <div class="border-b border-black bg-gray-100 px-5 py-4">
+          <p class="text-sm font-bold uppercase">Tugas 2</p>
+          <h2 class="mt-1 text-2xl font-bold">Menghitung Luas Bangun Datar</h2>
+        </div>
+
+        <div class="p-5">
+          <p class="mb-6 max-w-2xl leading-7">
+            Isi nama dan NIM, kemudian pilih jenis bangun datar. Parameter
+            perhitungan akan berubah sesuai bangun yang dipilih.
+          </p>
+
+          <form
+            id="formBangun"
+            class="max-w-xl"
+            onsubmit="return validasiBangun(event);"
+          >
+            <div class="mb-4">
+              <label for="namaMahasiswa" class="mb-1 block font-bold"
+                >Nama</label
+              >
+              <input
+                type="text"
+                id="namaMahasiswa"
+                name="nama"
+                class="w-full border border-black px-3 py-2 outline-none focus:ring-2 focus:ring-black"
+                placeholder="Tuliskan Nama Anda"
+              />
+              <small id="errNama" class="mt-1 block"></small>
+            </div>
+
+            <div class="mb-4">
+              <label for="nimMahasiswa" class="mb-1 block font-bold">NIM</label>
+              <input
+                type="text"
+                id="nimMahasiswa"
+                name="nim"
+                class="w-full border border-black px-3 py-2 outline-none focus:ring-2 focus:ring-black"
+                placeholder="Tuliskan NIM Anda"
+              />
+              <small id="errNim" class="mt-1 block"></small>
+            </div>
+
+            <div class="mb-5">
+              <p class="mb-2 font-bold">Pilih Bangun Datar</p>
+
+              <div class="flex flex-wrap gap-4">
+                <label class="flex cursor-pointer items-center gap-2">
+                  <input
+                    type="radio"
+                    name="bangun"
+                    value="Persegi"
+                    checked
+                    onchange="pilihPersegi()"
+                  />
+                  Persegi
+                </label>
+
+                <label class="flex cursor-pointer items-center gap-2">
+                  <input
+                    type="radio"
+                    name="bangun"
+                    value="Belah Ketupat"
+                    onchange="pilihBelahKetupat()"
+                  />
+                  Belah Ketupat
+                </label>
+
+                <label class="flex cursor-pointer items-center gap-2">
+                  <input
+                    type="radio"
+                    name="bangun"
+                    value="Segitiga"
+                    onchange="pilihSegitiga()"
+                  />
+                  Segitiga
+                </label>
+              </div>
+            </div>
+
+            <div class="mb-5 border border-black bg-gray-100 p-4">
+              <p class="text-sm">Luas Bangun Datar</p>
+              <h3 id="namaBangun" class="mt-1 text-xl font-bold">Persegi</h3>
+            </div>
+
+            <div class="mb-4">
+              <label id="labelPar1" for="par1" class="mb-1 block font-bold">
+                Panjang
+              </label>
+              <input
+                type="number"
+                id="par1"
+                min="0"
+                step="any"
+                class="w-full border border-black px-3 py-2 outline-none focus:ring-2 focus:ring-black"
+                placeholder="Hanya Angka"
+                oninput="hitungLuas()"
+              />
+            </div>
+
+            <div class="mb-4">
+              <label id="labelPar2" for="par2" class="mb-1 block font-bold">
+                Lebar
+              </label>
+              <input
+                type="number"
+                id="par2"
+                min="0"
+                step="any"
+                class="w-full border border-black px-3 py-2 outline-none focus:ring-2 focus:ring-black"
+                placeholder="Hanya Angka"
+                oninput="hitungLuas()"
+              />
+            </div>
+
+            <div class="mb-5">
+              <label for="hasilLuas" class="mb-1 block font-bold">Luas</label>
+              <input
+                type="text"
+                id="hasilLuas"
+                name="hasil"
+                class="w-full border border-black bg-gray-100 px-3 py-2 font-bold"
+                readonly
+              />
+              <small id="errHasil" class="mt-1 block"></small>
+            </div>
+
+            <button
+              type="submit"
+              class="border-2 border-black bg-black px-5 py-2 font-bold text-white transition hover:-translate-y-1 hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_black] active:translate-x-1 active:translate-y-1 active:shadow-none"
+            >
+              Simpan
+            </button>
+
+            <p
+              id="pesanBangun"
+              class="mt-4 hidden border border-black bg-gray-100 p-3"
+            ></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="mt-10 border-t border-black px-6 py-6 text-center">
+      <p>&copy; 2026 I Kadek Gilang Indrawan</p>
+    </footer>
+
+    <script>
+      function formatRupiah(angka) {
+        return "Rp " + angka.toLocaleString("id-ID");
+      }
+
+      function prosesPenjualan() {
+        const namaBarang = document.getElementById("namaBarang").value.trim();
+        const harga = Number(document.getElementById("harga").value);
+        const jumlah = Number(document.getElementById("jumlah").value);
+
+        const totalInput = document.getElementById("total");
+        const diskonInput = document.getElementById("diskon");
+        const bayarInput = document.getElementById("bayar");
+        const pesan = document.getElementById("pesan");
+
+        if (namaBarang === "" || harga <= 0 || jumlah <= 0) {
+          pesan.textContent =
+            "Silakan isi nama barang, harga, dan jumlah dengan benar.";
+          pesan.classList.remove("hidden");
+
+          totalInput.value = "";
+          diskonInput.value = "";
+          bayarInput.value = "";
+
+          return;
+        }
+
+        const total = harga * jumlah;
+        const diskon = total * 0.1;
+        const bayar = total - diskon;
+
+        totalInput.value = formatRupiah(total);
+        diskonInput.value = formatRupiah(diskon);
+        bayarInput.value = formatRupiah(bayar);
+
+        pesan.textContent = "Data " + namaBarang + " berhasil diproses.";
+        pesan.classList.remove("hidden");
+      }
+
+      function resetPenjualan() {
+        document.getElementById("namaBarang").value = "";
+        document.getElementById("harga").value = "";
+        document.getElementById("jumlah").value = "";
+        document.getElementById("total").value = "";
+        document.getElementById("diskon").value = "";
+        document.getElementById("bayar").value = "";
+
+        const pesan = document.getElementById("pesan");
+        pesan.textContent = "";
+        pesan.classList.add("hidden");
+
+        document.getElementById("namaBarang").focus();
+      }
+
+      // =========================
+      // TUGAS 2 - BANGUN DATAR
+      // =========================
+
+      function pilihPersegi() {
+        document.getElementById("namaBangun").textContent = "Persegi";
+        document.getElementById("labelPar1").textContent = "Panjang";
+        document.getElementById("labelPar2").textContent = "Lebar";
+        hitungLuas();
+      }
+
+      function pilihBelahKetupat() {
+        document.getElementById("namaBangun").textContent = "Belah Ketupat";
+        document.getElementById("labelPar1").textContent = "Diameter 1";
+        document.getElementById("labelPar2").textContent = "Diameter 2";
+        hitungLuas();
+      }
+
+      function pilihSegitiga() {
+        document.getElementById("namaBangun").textContent = "Segitiga";
+        document.getElementById("labelPar1").textContent = "Alas";
+        document.getElementById("labelPar2").textContent = "Tinggi";
+        hitungLuas();
+      }
+
+      function hitungLuas() {
+        const par1 = parseFloat(document.getElementById("par1").value);
+        const par2 = parseFloat(document.getElementById("par2").value);
+        const bangun = document.querySelector(
+          'input[name="bangun"]:checked',
+        ).value;
+
+        const hasilInput = document.getElementById("hasilLuas");
+
+        if (isNaN(par1) || isNaN(par2)) {
+          hasilInput.value = "";
+          return;
+        }
+
+        let hasil = 0;
+
+        switch (bangun) {
+          case "Persegi":
+            hasil = par1 * par2;
+            break;
+
+          case "Belah Ketupat":
+            hasil = (par1 * par2) / 2;
+            break;
+
+          case "Segitiga":
+            hasil = (par1 * par2) / 2;
+            break;
+        }
+
+        hasilInput.value = hasil;
+      }
+
+      function validasiBangun(event) {
+        event.preventDefault();
+
+        const nama = document.getElementById("namaMahasiswa").value.trim();
+        const nim = document.getElementById("nimMahasiswa").value.trim();
+        const hasil = document.getElementById("hasilLuas").value;
+
+        const errNama = document.getElementById("errNama");
+        const errNim = document.getElementById("errNim");
+        const errHasil = document.getElementById("errHasil");
+        const pesan = document.getElementById("pesanBangun");
+
+        errNama.textContent = "";
+        errNim.textContent = "";
+        errHasil.textContent = "";
+        pesan.classList.add("hidden");
+
+        let valid = true;
+
+        if (nama === "") {
+          errNama.textContent = "* Nama harus diisi";
+          valid = false;
+        }
+
+        if (nim === "") {
+          errNim.textContent = "* NIM harus diisi";
+          valid = false;
+        }
+
+        if (hasil === "") {
+          errHasil.textContent = "* Silakan isi parameter";
+          valid = false;
+        }
+
+        if (!valid) {
+          return false;
+        }
+
+        const bangun = document.querySelector(
+          'input[name="bangun"]:checked',
+        ).value;
+
+        pesan.textContent =
+          "Data berhasil disimpan. Luas " + bangun + " = " + hasil;
+        pesan.classList.remove("hidden");
+
+        return false;
+      }
+    </script>
+  </body>
+</html>
